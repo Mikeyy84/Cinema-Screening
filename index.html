@@ -91,12 +91,12 @@
 </head>
 <body>
     <nav>
-        <a href="#" onclick="showHome()">Home</a>
-        <a href="#screenings" onclick="showScreenings()">Screenings</a>
-        <a href="#contact" onclick="showContact()">Contact Us</a>
+        <a href="#">Home</a>
+        <a href="#screenings">Screenings</a>
+        <a href="#contact">Contact Us</a>
     </nav>
     <h1>Pass The Popcorn</h1>
-    <div class="main-image" id="home">
+    <div class="main-image">
         <img src="Home%20page.jpg" alt="Pass The Popcorn Poster">
     </div>
     <div class="buttons">
@@ -114,23 +114,23 @@
     <div id="screenings" style="display:none;">
         <h2>Current Movie Screenings</h2>
         <div class="movie-gallery">
-            <div class="movie">
+            <div class="movie" onclick="showMovieDetails('daddy_day_care')">
                 <img src="DADDY%20DAY%20CARE.jpg" alt="Daddy Day Care">
                 <div class="movie-info">
-                    <h3 onclick="showMovieDetails('daddy_day_care')">Daddy Day Care</h3>
+                    <h3>Daddy Day Care</h3>
                     <p>Genre: Comedy</p>
                     <p>Age Rating: PG</p>
                 </div>
             </div>
-            <div class="movie">
+            <div class="movie" onclick="showMovieDetails('it_ends_with_us')">
                 <img src="IT%20ENDS%20WITH%20US.jpg" alt="It Ends With Us">
                 <div class="movie-info">
-                    <h3 onclick="showMovieDetails('it_ends_with_us')">It Ends With Us</h3>
+                    <h3>It Ends With Us</h3>
                     <p>Genre: Drama</p>
                     <p>Age Rating: PG16</p>
                 </div>
             </div>
-            <!-- Add more movies here as needed -->
+            <!-- Add the rest of the movies similarly here -->
         </div>
     </div>
 
@@ -150,7 +150,7 @@
             <p>Days: Wednesday, Friday</p>
             <p>To reserve seats, please contact: +33 0666118985</p>
         </div>
-        <!-- Add more movie details here as needed -->
+        <!-- Add the rest of the movies similarly here -->
     </div>
 
     <footer>
@@ -158,35 +158,33 @@
     </footer>
 
     <script>
-        function hideAllSections() {
-            document.getElementById("home").style.display = "none";
-            document.getElementById("screenings").style.display = "none";
-            document.getElementById("contact").style.display = "none";
-            document.getElementById("movie-details").style.display = "none";
-            let movieDetails = document.querySelectorAll('.movie-detail');
-            movieDetails.forEach(detail => {
-                detail.style.display = "none";
-            });
-        }
-
-        function showHome() {
-            hideAllSections();
-            document.getElementById("home").style.display = "block";
-        }
-
         function showContact() {
-            hideAllSections();
             document.getElementById("contact").style.display = "block";
+            document.getElementById("screenings").style.display = "none";
+            document.getElementById("movie-details").style.display = "none";
         }
 
         function showScreenings() {
-            hideAllSections();
             document.getElementById("screenings").style.display = "block";
+            document.getElementById("contact").style.display = "none";
+            document.getElementById("movie-details").style.display = "none";
         }
 
         function showMovieDetails(movieId) {
-            hideAllSections();
+            // Hide other sections
+            document.getElementById("screenings").style.display = "none";
+            document.getElementById("contact").style.display = "none";
+
+            // Show the movie details section
             document.getElementById("movie-details").style.display = "block";
+
+            // Hide all movie details
+            let details = document.querySelectorAll('.movie-detail');
+            details.forEach(detail => {
+                detail.style.display = 'none';
+            });
+
+            // Show the selected movie details
             document.getElementById(movieId).style.display = "block";
         }
     </script>
