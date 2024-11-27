@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
             text-align: center;
             font-family: 'Arial', sans-serif;
         }
+
         nav {
             position: sticky;
             top: 0;
@@ -23,65 +25,85 @@
             align-items: center;
             z-index: 1000;
         }
+
         nav a {
             color: white;
             text-decoration: none;
             padding: 10px;
         }
+
         nav a:hover {
             color: #f39c12;
         }
+
         .main-image img {
             width: 80%;
             max-width: 600px;
             height: auto;
             margin-top: 20px;
         }
+
         .buttons {
             margin-top: 20px;
         }
+
         button {
             padding: 15px;
             margin: 10px;
             font-size: 1em;
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s;
+            color: white;
+            background-color: #444;
+            border: none;
         }
+
         button:hover {
             background-color: #f39c12;
             transform: scale(1.05);
         }
+
         .movie-gallery {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
+            padding: 20px;
         }
+
         .movie {
-            width: calc(50% - 20px);
-            background-color: #222;
+            width: 45%;
+            max-width: 300px;
+            background-color: #333;
             padding: 10px;
             border-radius: 8px;
             transition: transform 0.3s;
         }
+
         .movie:hover {
             transform: scale(1.05);
         }
+
         .movie img {
             width: 100%;
             border-radius: 5px;
+            height: auto;
         }
+
         .movie-info {
             margin-top: 10px;
         }
+
         footer {
             background-color: #222;
             padding: 20px;
             margin-top: 30px;
         }
+
         footer p {
             margin: 0;
         }
+
         @media (max-width: 600px) {
             .movie {
                 width: 100%;
@@ -89,6 +111,7 @@
         }
     </style>
 </head>
+
 <body>
     <nav>
         <a href="#">Home</a>
@@ -183,62 +206,7 @@
 
     <!-- Individual Movie Pages as Popup Modals -->
     <div id="movie-details" style="display:none;">
-        <div id="daddy_day_care" class="movie-detail">
-            <h2>Daddy Day Care</h2>
-            <p>Showing Times: 5:00 PM, 7:00 PM</p>
-            <p>Duration: 1 hr 32 min</p>
-            <p>Days: Friday, Saturday, Sunday</p>
-            <p>To reserve seats, please contact: +33 0666118985</p>
-        </div>
-        <div id="it_ends_with_us" class="movie-detail">
-            <h2>It Ends With Us</h2>
-            <p>Showing Times: 5:00 PM, 7:00 PM</p>
-            <p>Duration: 2 hr 11 min</p>
-            <p>Days: Wednesday, Friday</p>
-            <p>To reserve seats, please contact: +33 0666118985</p>
-        </div>
-        <div id="lamour_ouf" class="movie-detail">
-            <h2>L'Amour Ouf</h2>
-            <p>Showing Times: 5:00 PM, 7:00 PM</p>
-            <p>Duration: 2 hr 40 min</p>
-            <p>Days: Monday, Tuesday</p>
-            <p>To reserve seats, please contact: +33 0666118985</p>
-        </div>
-        <div id="smile_2" class="movie-detail">
-            <h2>Smile 2</h2>
-            <p>Showing Times: 5:00 PM, 7:00 PM</p>
-            <p>Duration: 2 hr 12 min</p>
-            <p>Days: Thursday</p>
-            <p>To reserve seats, please contact: +33 0666118985</p>
-        </div>
-        <div id="spider_man_no_way_home" class="movie-detail">
-            <h2>Spider-Man: No Way Home</h2>
-            <p>Showing Times: 5:00 PM, 7:00 PM</p>
-            <p>Duration: 2 hr 30 min</p>
-            <p>Days: Friday, Saturday, Monday</p>
-            <p>To reserve seats, please contact: +33 0666118985</p>
-        </div>
-        <div id="transformers_rise_of_the_beasts" class="movie-detail">
-            <h2>Transformers: Rise of the Beasts</h2>
-            <p>Showing Times: 5:00 PM, 7:00 PM</p>
-            <p>Duration: 2 hr 7 min</p>
-            <p>Days: Friday, Saturday, Sunday</p>
-            <p>To reserve seats, please contact: +33 0666118985</p>
-        </div>
-        <div id="wicked" class="movie-detail">
-            <h2>Wicked</h2>
-            <p>Showing Times: 5:00 PM, 7:00 PM</p>
-            <p>Duration: 2 hr 40 min</p>
-            <p>Days: Friday, Saturday, Sunday</p>
-            <p>To reserve seats, please contact: +33 0666118985</p>
-        </div>
-        <div id="wild_life" class="movie-detail">
-            <h2>Wild Life</h2>
-            <p>Showing Times: 5:00 PM, 7:00 PM</p>
-            <p>Duration: 1 hr 30 min</p>
-            <p>Days: Thursday</p>
-            <p>To reserve seats, please contact: +33 0666118985</p>
-        </div>
+        <!-- Include individual movie details -->
     </div>
 
     <footer>
@@ -270,4 +238,5 @@
         }
     </script>
 </body>
+
 </html>
