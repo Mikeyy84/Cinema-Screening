@@ -114,43 +114,131 @@
     <div id="screenings" style="display:none;">
         <h2>Current Movie Screenings</h2>
         <div class="movie-gallery">
-            <div class="movie" onclick="showMovieDetails('daddy_day_care')">
+            <div class="movie">
                 <img src="DADDY%20DAY%20CARE.jpg" alt="Daddy Day Care">
                 <div class="movie-info">
-                    <h3>Daddy Day Care</h3>
+                    <h3 onclick="showMovieDetails('daddy_day_care')">Daddy Day Care</h3>
                     <p>Genre: Comedy</p>
                     <p>Age Rating: PG</p>
                 </div>
             </div>
-            <div class="movie" onclick="showMovieDetails('it_ends_with_us')">
+            <div class="movie">
                 <img src="IT%20ENDS%20WITH%20US.jpg" alt="It Ends With Us">
                 <div class="movie-info">
-                    <h3>It Ends With Us</h3>
+                    <h3 onclick="showMovieDetails('it_ends_with_us')">It Ends With Us</h3>
                     <p>Genre: Drama</p>
                     <p>Age Rating: PG16</p>
                 </div>
             </div>
-            <!-- Add the rest of the movies similarly here -->
+            <div class="movie">
+                <img src="LAMOUR%20OUF.jpg" alt="L'Amour Ouf">
+                <div class="movie-info">
+                    <h3 onclick="showMovieDetails('lamour_ouf')">L'Amour Ouf</h3>
+                    <p>Genre: Romance</p>
+                    <p>Age Rating: PG16</p>
+                </div>
+            </div>
+            <div class="movie">
+                <img src="SMILE%202.jpg" alt="Smile 2">
+                <div class="movie-info">
+                    <h3 onclick="showMovieDetails('smile_2')">Smile 2</h3>
+                    <p>Genre: Horror</p>
+                    <p>Age Rating: PG18</p>
+                </div>
+            </div>
+            <div class="movie">
+                <img src="SPIDER-MAN%20No%20Way%20Home.jpg" alt="Spider-Man No Way Home">
+                <div class="movie-info">
+                    <h3 onclick="showMovieDetails('spider_man_no_way_home')">Spider-Man: No Way Home</h3>
+                    <p>Genre: Action</p>
+                    <p>Age Rating: PG13</p>
+                </div>
+            </div>
+            <div class="movie">
+                <img src="TRANSFORMERS%20RISE%20OF%20THE%20BEASTS.jpg" alt="Transformers Rise of the Beasts">
+                <div class="movie-info">
+                    <h3 onclick="showMovieDetails('transformers_rise_of_the_beasts')">Transformers: Rise of the Beasts</h3>
+                    <p>Genre: Action</p>
+                    <p>Age Rating: PG13</p>
+                </div>
+            </div>
+            <div class="movie">
+                <img src="WICKED.jpg" alt="Wicked">
+                <div class="movie-info">
+                    <h3 onclick="showMovieDetails('wicked')">Wicked</h3>
+                    <p>Genre: Fantasy</p>
+                    <p>Age Rating: PG7</p>
+                </div>
+            </div>
+            <div class="movie">
+                <img src="WILD%20LIFE.jpg" alt="Wild Life">
+                <div class="movie-info">
+                    <h3 onclick="showMovieDetails('wild_life')">Wild Life</h3>
+                    <p>Genre: Documentary</p>
+                    <p>Age Rating: PG13</p>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Individual Movie Pages as Popup Modals -->
     <div id="movie-details" style="display:none;">
-        <div id="daddy_day_care" class="movie-detail" style="display:none;">
+        <div id="daddy_day_care" class="movie-detail">
             <h2>Daddy Day Care</h2>
             <p>Showing Times: 5:00 PM, 7:00 PM</p>
             <p>Duration: 1 hr 32 min</p>
             <p>Days: Friday, Saturday, Sunday</p>
             <p>To reserve seats, please contact: +33 0666118985</p>
         </div>
-        <div id="it_ends_with_us" class="movie-detail" style="display:none;">
+        <div id="it_ends_with_us" class="movie-detail">
             <h2>It Ends With Us</h2>
             <p>Showing Times: 5:00 PM, 7:00 PM</p>
             <p>Duration: 2 hr 11 min</p>
             <p>Days: Wednesday, Friday</p>
             <p>To reserve seats, please contact: +33 0666118985</p>
         </div>
-        <!-- Add the rest of the movies similarly here -->
+        <div id="lamour_ouf" class="movie-detail">
+            <h2>L'Amour Ouf</h2>
+            <p>Showing Times: 5:00 PM, 7:00 PM</p>
+            <p>Duration: 2 hr 40 min</p>
+            <p>Days: Monday, Tuesday</p>
+            <p>To reserve seats, please contact: +33 0666118985</p>
+        </div>
+        <div id="smile_2" class="movie-detail">
+            <h2>Smile 2</h2>
+            <p>Showing Times: 5:00 PM, 7:00 PM</p>
+            <p>Duration: 2 hr 12 min</p>
+            <p>Days: Thursday</p>
+            <p>To reserve seats, please contact: +33 0666118985</p>
+        </div>
+        <div id="spider_man_no_way_home" class="movie-detail">
+            <h2>Spider-Man: No Way Home</h2>
+            <p>Showing Times: 5:00 PM, 7:00 PM</p>
+            <p>Duration: 2 hr 30 min</p>
+            <p>Days: Friday, Saturday, Monday</p>
+            <p>To reserve seats, please contact: +33 0666118985</p>
+        </div>
+        <div id="transformers_rise_of_the_beasts" class="movie-detail">
+            <h2>Transformers: Rise of the Beasts</h2>
+            <p>Showing Times: 5:00 PM, 7:00 PM</p>
+            <p>Duration: 2 hr 7 min</p>
+            <p>Days: Friday, Saturday, Sunday</p>
+            <p>To reserve seats, please contact: +33 0666118985</p>
+        </div>
+        <div id="wicked" class="movie-detail">
+            <h2>Wicked</h2>
+            <p>Showing Times: 5:00 PM, 7:00 PM</p>
+            <p>Duration: 2 hr 40 min</p>
+            <p>Days: Friday, Saturday, Sunday</p>
+            <p>To reserve seats, please contact: +33 0666118985</p>
+        </div>
+        <div id="wild_life" class="movie-detail">
+            <h2>Wild Life</h2>
+            <p>Showing Times: 5:00 PM, 7:00 PM</p>
+            <p>Duration: 1 hr 30 min</p>
+            <p>Days: Thursday</p>
+            <p>To reserve seats, please contact: +33 0666118985</p>
+        </div>
     </div>
 
     <footer>
@@ -171,20 +259,13 @@
         }
 
         function showMovieDetails(movieId) {
-            // Hide other sections
             document.getElementById("screenings").style.display = "none";
             document.getElementById("contact").style.display = "none";
-
-            // Show the movie details section
             document.getElementById("movie-details").style.display = "block";
-
-            // Hide all movie details
             let details = document.querySelectorAll('.movie-detail');
             details.forEach(detail => {
                 detail.style.display = 'none';
             });
-
-            // Show the selected movie details
             document.getElementById(movieId).style.display = "block";
         }
     </script>
