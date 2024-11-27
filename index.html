@@ -14,7 +14,6 @@
             text-align: center;
             font-family: 'Arial', sans-serif;
         }
-
         nav {
             position: sticky;
             top: 0;
@@ -25,28 +24,23 @@
             align-items: center;
             z-index: 1000;
         }
-
         nav a {
             color: white;
             text-decoration: none;
             padding: 10px;
         }
-
         nav a:hover {
             color: #f39c12;
         }
-
         .main-image img {
             width: 80%;
             max-width: 600px;
             height: auto;
             margin-top: 20px;
         }
-
         .buttons {
             margin-top: 20px;
         }
-
         button {
             padding: 15px;
             margin: 10px;
@@ -54,19 +48,16 @@
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s;
         }
-
         button:hover {
             background-color: #f39c12;
             transform: scale(1.05);
         }
-
         .movie-gallery {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
         }
-
         .movie {
             width: calc(50% - 20px);
             background-color: #222;
@@ -74,30 +65,24 @@
             border-radius: 8px;
             transition: transform 0.3s;
         }
-
         .movie:hover {
             transform: scale(1.05);
         }
-
         .movie img {
             width: 100%;
             border-radius: 5px;
         }
-
         .movie-info {
             margin-top: 10px;
         }
-
         footer {
             background-color: #222;
             padding: 20px;
             margin-top: 30px;
         }
-
         footer p {
             margin: 0;
         }
-
         @media (max-width: 600px) {
             .movie {
                 width: 100%;
@@ -108,15 +93,15 @@
 
 <body>
     <nav>
-        <a href="#" onclick="showHome()">Home</a>
-        <a href="#" onclick="showScreenings()">Screenings</a>
-        <a href="#" onclick="showContact()">Contact Us</a>
+        <a href="#">Home</a>
+        <a href="#screenings">Screenings</a>
+        <a href="#contact">Contact Us</a>
     </nav>
     <h1>Pass The Popcorn</h1>
-    <div class="main-image" id="home">
+    <div class="main-image">
         <img src="Home%20page.jpg" alt="Pass The Popcorn Poster">
     </div>
-    <div class="buttons" id="buttons">
+    <div class="buttons">
         <button onclick="showScreenings()"><i class="fas fa-film"></i> Movie Screenings</button>
         <button onclick="showContact()"><i class="fas fa-phone-alt"></i> Contact Us</button>
     </div>
@@ -139,35 +124,20 @@
                     <p>Age Rating: PG</p>
                 </div>
             </div>
-            <div class="movie">
-                <img src="IT%20ENDS%20WITH%20US.jpg" alt="It Ends With Us">
-                <div class="movie-info">
-                    <h3 onclick="showMovieDetails('it_ends_with_us')">It Ends With Us</h3>
-                    <p>Genre: Drama</p>
-                    <p>Age Rating: PG16</p>
-                </div>
-            </div>
-            <!-- Include all movie entries here as per your previous code -->
+            <!-- Additional Movies here -->
         </div>
     </div>
 
     <!-- Individual Movie Pages as Popup Modals -->
     <div id="movie-details" style="display:none;">
-        <div id="daddy_day_care" class="movie-detail" style="display:none;">
+        <div id="daddy_day_care" class="movie-detail">
             <h2>Daddy Day Care</h2>
             <p>Showing Times: 5:00 PM, 7:00 PM</p>
             <p>Duration: 1 hr 32 min</p>
             <p>Days: Friday, Saturday, Sunday</p>
             <p>To reserve seats, please contact: +33 0666118985</p>
         </div>
-        <div id="it_ends_with_us" class="movie-detail" style="display:none;">
-            <h2>It Ends With Us</h2>
-            <p>Showing Times: 5:00 PM, 7:00 PM</p>
-            <p>Duration: 2 hr 11 min</p>
-            <p>Days: Wednesday, Friday</p>
-            <p>To reserve seats, please contact: +33 0666118985</p>
-        </div>
-        <!-- Include other movie details here as well -->
+        <!-- Additional Movie Details here -->
     </div>
 
     <footer>
@@ -175,46 +145,27 @@
     </footer>
 
     <script>
-        function showHome() {
-            document.getElementById("home").style.display = "block";
-            document.getElementById("buttons").style.display = "block";
-            document.getElementById("screenings").style.display = "none";
-            document.getElementById("contact").style.display = "none";
-            document.getElementById("movie-details").style.display = "none";
-        }
-
         function showContact() {
-            document.getElementById("home").style.display = "none";
-            document.getElementById("buttons").style.display = "none";
             document.getElementById("contact").style.display = "block";
             document.getElementById("screenings").style.display = "none";
             document.getElementById("movie-details").style.display = "none";
         }
 
         function showScreenings() {
-            document.getElementById("home").style.display = "none";
-            document.getElementById("buttons").style.display = "none";
             document.getElementById("screenings").style.display = "block";
             document.getElementById("contact").style.display = "none";
             document.getElementById("movie-details").style.display = "none";
         }
 
         function showMovieDetails(movieId) {
-            document.getElementById("home").style.display = "none";
-            document.getElementById("buttons").style.display = "none";
             document.getElementById("screenings").style.display = "none";
             document.getElementById("contact").style.display = "none";
             document.getElementById("movie-details").style.display = "block";
-
-            // Hide all movie details first
-            const details = document.querySelectorAll('.movie-detail');
-            details.forEach(detail => detail.style.display = 'none');
-
-            // Show the selected movie detail
-            const selectedDetail = document.getElementById(movieId);
-            if (selectedDetail) {
-                selectedDetail.style.display = 'block';
-            }
+            let details = document.querySelectorAll('.movie-detail');
+            details.forEach(detail => {
+                detail.style.display = 'none';
+            });
+            document.getElementById(movieId).style.display = "block";
         }
     </script>
 </body>
