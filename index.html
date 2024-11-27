@@ -14,6 +14,7 @@
             text-align: center;
             font-family: 'Arial', sans-serif;
         }
+
         nav {
             position: sticky;
             top: 0;
@@ -24,23 +25,29 @@
             align-items: center;
             z-index: 1000;
         }
+
         nav a {
             color: white;
             text-decoration: none;
             padding: 10px;
+            cursor: pointer;
         }
+
         nav a:hover {
             color: #f39c12;
         }
+
         .main-image img {
             width: 80%;
             max-width: 600px;
             height: auto;
             margin-top: 20px;
         }
+
         .buttons {
             margin-top: 20px;
         }
+
         button {
             padding: 15px;
             margin: 10px;
@@ -48,16 +55,19 @@
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s;
         }
+
         button:hover {
             background-color: #f39c12;
             transform: scale(1.05);
         }
+
         .movie-gallery {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
         }
+
         .movie {
             width: calc(50% - 20px);
             background-color: #222;
@@ -65,24 +75,30 @@
             border-radius: 8px;
             transition: transform 0.3s;
         }
+
         .movie:hover {
             transform: scale(1.05);
         }
+
         .movie img {
             width: 100%;
             border-radius: 5px;
         }
+
         .movie-info {
             margin-top: 10px;
         }
+
         footer {
             background-color: #222;
             padding: 20px;
             margin-top: 30px;
         }
+
         footer p {
             margin: 0;
         }
+
         @media (max-width: 600px) {
             .movie {
                 width: 100%;
@@ -93,17 +109,17 @@
 
 <body>
     <nav>
-        <a href="#">Home</a>
-        <a href="#screenings">Screenings</a>
-        <a href="#contact">Contact Us</a>
+        <a onclick="showHome()">Home</a>
+        <a onclick="showScreenings()">Screenings</a>
+        <a onclick="showContact()">Contact Us</a>
     </nav>
     <h1>Pass The Popcorn</h1>
-    <div class="main-image">
+    <div id="home" class="main-image">
         <img src="Home%20page.jpg" alt="Pass The Popcorn Poster">
-    </div>
-    <div class="buttons">
-        <button onclick="showScreenings()"><i class="fas fa-film"></i> Movie Screenings</button>
-        <button onclick="showContact()"><i class="fas fa-phone-alt"></i> Contact Us</button>
+        <div class="buttons">
+            <button onclick="showScreenings()"><i class="fas fa-film"></i> Movie Screenings</button>
+            <button onclick="showContact()"><i class="fas fa-phone-alt"></i> Contact Us</button>
+        </div>
     </div>
 
     <!-- Contact Us Page -->
@@ -124,7 +140,62 @@
                     <p>Age Rating: PG</p>
                 </div>
             </div>
-            <!-- Additional Movies here -->
+            <div class="movie">
+                <img src="IT%20ENDS%20WITH%20US.jpg" alt="It Ends With Us">
+                <div class="movie-info">
+                    <h3 onclick="showMovieDetails('it_ends_with_us')">It Ends With Us</h3>
+                    <p>Genre: Drama</p>
+                    <p>Age Rating: PG16</p>
+                </div>
+            </div>
+            <div class="movie">
+                <img src="LAMOUR%20OUF.jpg" alt="L'Amour Ouf">
+                <div class="movie-info">
+                    <h3 onclick="showMovieDetails('lamour_ouf')">L'Amour Ouf</h3>
+                    <p>Genre: Romance</p>
+                    <p>Age Rating: PG16</p>
+                </div>
+            </div>
+            <div class="movie">
+                <img src="SMILE%202.jpg" alt="Smile 2">
+                <div class="movie-info">
+                    <h3 onclick="showMovieDetails('smile_2')">Smile 2</h3>
+                    <p>Genre: Horror</p>
+                    <p>Age Rating: PG18</p>
+                </div>
+            </div>
+            <div class="movie">
+                <img src="SPIDER-MAN%20No%20Way%20Home.jpg" alt="Spider-Man No Way Home">
+                <div class="movie-info">
+                    <h3 onclick="showMovieDetails('spider_man_no_way_home')">Spider-Man: No Way Home</h3>
+                    <p>Genre: Action</p>
+                    <p>Age Rating: PG13</p>
+                </div>
+            </div>
+            <div class="movie">
+                <img src="TRANSFORMERS%20RISE%20OF%20THE%20BEASTS.jpg" alt="Transformers Rise of the Beasts">
+                <div class="movie-info">
+                    <h3 onclick="showMovieDetails('transformers_rise_of_the_beasts')">Transformers: Rise of the Beasts</h3>
+                    <p>Genre: Action</p>
+                    <p>Age Rating: PG13</p>
+                </div>
+            </div>
+            <div class="movie">
+                <img src="WICKED.jpg" alt="Wicked">
+                <div class="movie-info">
+                    <h3 onclick="showMovieDetails('wicked')">Wicked</h3>
+                    <p>Genre: Fantasy</p>
+                    <p>Age Rating: PG7</p>
+                </div>
+            </div>
+            <div class="movie">
+                <img src="WILD%20LIFE.jpg" alt="Wild Life">
+                <div class="movie-info">
+                    <h3 onclick="showMovieDetails('wild_life')">Wild Life</h3>
+                    <p>Genre: Documentary</p>
+                    <p>Age Rating: PG13</p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -145,21 +216,31 @@
     </footer>
 
     <script>
+        function showHome() {
+            document.getElementById("home").style.display = "block";
+            document.getElementById("screenings").style.display = "none";
+            document.getElementById("contact").style.display = "none";
+            document.getElementById("movie-details").style.display = "none";
+        }
+
         function showContact() {
             document.getElementById("contact").style.display = "block";
             document.getElementById("screenings").style.display = "none";
+            document.getElementById("home").style.display = "none";
             document.getElementById("movie-details").style.display = "none";
         }
 
         function showScreenings() {
             document.getElementById("screenings").style.display = "block";
             document.getElementById("contact").style.display = "none";
+            document.getElementById("home").style.display = "none";
             document.getElementById("movie-details").style.display = "none";
         }
 
         function showMovieDetails(movieId) {
             document.getElementById("screenings").style.display = "none";
             document.getElementById("contact").style.display = "none";
+            document.getElementById("home").style.display = "none";
             document.getElementById("movie-details").style.display = "block";
             let details = document.querySelectorAll('.movie-detail');
             details.forEach(detail => {
