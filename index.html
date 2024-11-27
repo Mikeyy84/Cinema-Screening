@@ -41,15 +41,18 @@
             margin-top: 20px;
         }
         button {
-            padding: 10px 20px; /* Adjusted padding to better center text */
+            padding: 15px 25px; /* Adjusted padding to better center text */
             margin: 10px;
             font-size: 1em;
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s;
-            display: inline-flex; /* Use flex to align items in the center */
-            align-items: center; /* Vertically align text */
-            justify-content: center; /* Horizontally align text */
-            height: 50px; /* Adjust height if needed to center the text properly */
+            display: inline-block;
+            text-align: center; 
+            vertical-align: middle;
+            line-height: 1.5em; /* Added line-height for vertical alignment */
+        }
+        button i {
+            margin-right: 8px; /* Spacing between icon and text */
         }
         button:hover {
             background-color: #f39c12;
@@ -104,8 +107,8 @@
         <img src="Home%20page.jpg" alt="Pass The Popcorn Poster">
     </div>
     <div class="buttons">
-        <button onclick="showScreenings()"><i class="fas fa-film"></i> Movie Screenings</button>
-        <button onclick="showContact()"><i class="fas fa-phone-alt"></i> Contact Us</button>
+        <button onclick="showScreenings()"><i class="fas fa-film"></i>Movie Screenings</button>
+        <button onclick="showContact()"><i class="fas fa-phone-alt"></i>Contact Us</button>
     </div>
 
     <!-- Contact Us Page -->
