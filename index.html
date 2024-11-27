@@ -109,16 +109,17 @@
 
 <body>
     <nav>
-        <a onclick="showHome()">Home</a>
-        <a onclick="showScreenings()">Screenings</a>
-        <a onclick="showContact()">Contact Us</a>
+        <a onclick="showSection('home')">Home</a>
+        <a onclick="showSection('screenings')">Screenings</a>
+        <a onclick="showSection('contact')">Contact Us</a>
     </nav>
-    <h1>Pass The Popcorn</h1>
+    
     <div id="home" class="main-image">
+        <h1>Pass The Popcorn</h1>
         <img src="Home%20page.jpg" alt="Pass The Popcorn Poster">
         <div class="buttons">
-            <button onclick="showScreenings()"><i class="fas fa-film"></i> Movie Screenings</button>
-            <button onclick="showContact()"><i class="fas fa-phone-alt"></i> Contact Us</button>
+            <button onclick="showSection('screenings')"><i class="fas fa-film"></i> Movie Screenings</button>
+            <button onclick="showSection('contact')"><i class="fas fa-phone-alt"></i> Contact Us</button>
         </div>
     </div>
 
@@ -208,7 +209,55 @@
             <p>Days: Friday, Saturday, Sunday</p>
             <p>To reserve seats, please contact: +33 0666118985</p>
         </div>
-        <!-- Additional Movie Details here -->
+        <div id="it_ends_with_us" class="movie-detail">
+            <h2>It Ends With Us</h2>
+            <p>Showing Times: 5:00 PM, 7:00 PM</p>
+            <p>Duration: 2 hr 11 min</p>
+            <p>Days: Wednesday, Friday</p>
+            <p>To reserve seats, please contact: +33 0666118985</p>
+        </div>
+        <div id="lamour_ouf" class="movie-detail">
+            <h2>L'Amour Ouf</h2>
+            <p>Showing Times: 5:00 PM, 7:00 PM</p>
+            <p>Duration: 2 hr 40 min</p>
+            <p>Days: Monday, Tuesday</p>
+            <p>To reserve seats, please contact: +33 0666118985</p>
+        </div>
+        <div id="smile_2" class="movie-detail">
+            <h2>Smile 2</h2>
+            <p>Showing Times: 5:00 PM, 7:00 PM</p>
+            <p>Duration: 2 hr 12 min</p>
+            <p>Days: Thursday</p>
+            <p>To reserve seats, please contact: +33 0666118985</p>
+        </div>
+        <div id="spider_man_no_way_home" class="movie-detail">
+            <h2>Spider-Man: No Way Home</h2>
+            <p>Showing Times: 5:00 PM, 7:00 PM</p>
+            <p>Duration: 2 hr 30 min</p>
+            <p>Days: Friday, Saturday, Monday</p>
+            <p>To reserve seats, please contact: +33 0666118985</p>
+        </div>
+        <div id="transformers_rise_of_the_beasts" class="movie-detail">
+            <h2>Transformers: Rise of the Beasts</h2>
+            <p>Showing Times: 5:00 PM, 7:00 PM</p>
+            <p>Duration: 2 hr 7 min</p>
+            <p>Days: Friday, Saturday, Sunday</p>
+            <p>To reserve seats, please contact: +33 0666118985</p>
+        </div>
+        <div id="wicked" class="movie-detail">
+            <h2>Wicked</h2>
+            <p>Showing Times: 5:00 PM, 7:00 PM</p>
+            <p>Duration: 2 hr 40 min</p>
+            <p>Days: Friday, Saturday, Sunday</p>
+            <p>To reserve seats, please contact: +33 0666118985</p>
+        </div>
+        <div id="wild_life" class="movie-detail">
+            <h2>Wild Life</h2>
+            <p>Showing Times: 5:00 PM, 7:00 PM</p>
+            <p>Duration: 1 hr 30 min</p>
+            <p>Days: Thursday</p>
+            <p>To reserve seats, please contact: +33 0666118985</p>
+        </div>
     </div>
 
     <footer>
@@ -216,32 +265,15 @@
     </footer>
 
     <script>
-        function showHome() {
-            document.getElementById("home").style.display = "block";
-            document.getElementById("screenings").style.display = "none";
-            document.getElementById("contact").style.display = "none";
-            document.getElementById("movie-details").style.display = "none";
-        }
-
-        function showContact() {
-            document.getElementById("contact").style.display = "block";
-            document.getElementById("screenings").style.display = "none";
-            document.getElementById("home").style.display = "none";
-            document.getElementById("movie-details").style.display = "none";
-        }
-
-        function showScreenings() {
-            document.getElementById("screenings").style.display = "block";
-            document.getElementById("contact").style.display = "none";
-            document.getElementById("home").style.display = "none";
-            document.getElementById("movie-details").style.display = "none";
+        function showSection(sectionId) {
+            const sections = ["home", "screenings", "contact", "movie-details"];
+            sections.forEach((id) => {
+                document.getElementById(id).style.display = id === sectionId ? "block" : "none";
+            });
         }
 
         function showMovieDetails(movieId) {
-            document.getElementById("screenings").style.display = "none";
-            document.getElementById("contact").style.display = "none";
-            document.getElementById("home").style.display = "none";
-            document.getElementById("movie-details").style.display = "block";
+            showSection("movie-details");
             let details = document.querySelectorAll('.movie-detail');
             details.forEach(detail => {
                 detail.style.display = 'none';
