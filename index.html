@@ -130,7 +130,7 @@
                     <p>Age Rating: PG16</p>
                 </div>
             </div>
-            <!-- (Repeat for other movies as well) -->
+            <!-- Add more movies here as needed -->
         </div>
     </div>
 
@@ -150,7 +150,7 @@
             <p>Days: Wednesday, Friday</p>
             <p>To reserve seats, please contact: +33 0666118985</p>
         </div>
-        <!-- (Repeat for other movies as well) -->
+        <!-- Add more movie details here as needed -->
     </div>
 
     <footer>
@@ -158,47 +158,36 @@
     </footer>
 
     <script>
-        function showHome() {
-            document.getElementById("home").style.display = "block";
+        function hideAllSections() {
+            document.getElementById("home").style.display = "none";
             document.getElementById("screenings").style.display = "none";
             document.getElementById("contact").style.display = "none";
             document.getElementById("movie-details").style.display = "none";
-            hideMovieDetails();
+            let movieDetails = document.querySelectorAll('.movie-detail');
+            movieDetails.forEach(detail => {
+                detail.style.display = "none";
+            });
+        }
+
+        function showHome() {
+            hideAllSections();
+            document.getElementById("home").style.display = "block";
         }
 
         function showContact() {
+            hideAllSections();
             document.getElementById("contact").style.display = "block";
-            document.getElementById("screenings").style.display = "none";
-            document.getElementById("home").style.display = "none";
-            document.getElementById("movie-details").style.display = "none";
-            hideMovieDetails();
         }
 
         function showScreenings() {
+            hideAllSections();
             document.getElementById("screenings").style.display = "block";
-            document.getElementById("contact").style.display = "none";
-            document.getElementById("home").style.display = "none";
-            document.getElementById("movie-details").style.display = "none";
-            hideMovieDetails();
         }
 
         function showMovieDetails(movieId) {
-            document.getElementById("screenings").style.display = "none";
-            document.getElementById("contact").style.display = "none";
-            document.getElementById("home").style.display = "none";
+            hideAllSections();
             document.getElementById("movie-details").style.display = "block";
-
-            hideMovieDetails();
-
-            // Show the correct movie detail div
             document.getElementById(movieId).style.display = "block";
-        }
-
-        function hideMovieDetails() {
-            let details = document.querySelectorAll('.movie-detail');
-            details.forEach(detail => {
-                detail.style.display = 'none';
-            });
         }
     </script>
 </body>
